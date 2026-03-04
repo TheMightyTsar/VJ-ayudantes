@@ -8,16 +8,8 @@ from elements.enemy import Enemy
 
 
 
-def gameloop():
-    ''' iniciamos los modulos de pygame'''
-
-    pygame.init()
-
-    SCREEN_WIDTH = 1000
-    SCREEN_HEIGHT = 700
-
-    # crear el objeto pantalla
-    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+def gameloop(screen):
+    ''' 1.- Definimos el fondo de nuestra escena'''
     background_image = pygame.image.load("assets/pixelBackground.jpg").convert()
 
     ''' 2.- generador de enemigos'''
@@ -25,7 +17,7 @@ def gameloop():
     pygame.time.set_timer(ADDENEMY, 600)
 
     ''' 3.- creamos la instancia de jugador'''
-    player = Player(SCREEN_WIDTH, SCREEN_HEIGHT)
+    player = Player(screen)
 
     ''' 4.- contenedores de enemigos y jugador'''
     enemies = pygame.sprite.Group()
@@ -56,7 +48,7 @@ def gameloop():
 
             # es un evento que agrega enemigos?
             elif event.type == ADDENEMY:
-                new_enemy = Enemy(SCREEN_WIDTH, SCREEN_HEIGHT)
+                new_enemy = Enemy(screen)
                 enemies.add(new_enemy)
                 all_sprites.add(new_enemy)
 
@@ -70,10 +62,6 @@ def gameloop():
             player.kill()
             running = False
 
-        # actualizamos la interfaz
-
-
-
         # obtenemos todas las teclas presionadas actualmente
         pressed_keys = pygame.key.get_pressed()
 
@@ -82,7 +70,7 @@ def gameloop():
 
         # actualizamos los enemigos
         enemies.update()
-
+        # actualizamos la interfaz
         pygame.display.flip()
 
         clock.tick(30)
