@@ -7,6 +7,11 @@ from elements.player import Player
 from elements.enemy import Enemy
 
 
+""""
+Este es el modulo game_scene, aqui se encuentra 
+la escena en donde ocurre nuestro juego
+"""
+
 
 def gameloop(screen):
     ''' 1.- Definimos el fondo de nuestra escena'''
