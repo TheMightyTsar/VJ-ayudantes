@@ -2,9 +2,9 @@ import pygame
 
 from pygame.locals import (K_ESCAPE, KEYDOWN, QUIT)
 
-from elements.player import Player
+from CarpetaBase.elements.player import Player
 
-from elements.enemy import Enemy
+from CarpetaBase.elements.enemy import Enemy
 
 
 """"

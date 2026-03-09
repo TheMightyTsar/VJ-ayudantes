@@ -16,20 +16,4 @@ class Player(pygame.sprite.Sprite):
         self.screen_height = screen.get_height()
 
     def update(self, pressed_keys):
-        if pressed_keys[K_UP]:
-            self.rect.move_ip(0, -4)
-        if pressed_keys[K_DOWN]:
-            self.rect.move_ip(0, 4)
-        if pressed_keys[K_LEFT]:
-            self.rect.move_ip(-4, 0)
-        if pressed_keys[K_RIGHT]:
-            self.rect.move_ip(4, 0)
-
-        if self.rect.left < 0:
-            self.rect.left = 0
-        if self.rect.right > self.screen_width:
-            self.rect.right = self.screen_width
-        if self.rect.top < 0:
-            self.rect.top = 0
-        if self.rect.bottom > self.screen_height:
-            self.rect.bottom = self.screen_height
+        pass

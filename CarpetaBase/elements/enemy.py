@@ -22,7 +22,5 @@ class Enemy(pygame.sprite.Sprite):
     # el sprite tendra velocidad
     # cuando traspase el lado izq de la pantalla lo eliminamos
     def update(self):
-        self.rect.move_ip(-self.speed, 0)
-        if self.rect.right < 0:
-            self.kill()
+        pass
 
