@@ -69,10 +69,8 @@ def gameloop(screen):
 
         # obtenemos todas las teclas presionadas actualmente
         pressed_keys = pygame.key.get_pressed()
-
         # actualizamos el sprite del jugador basado en las teclas presionadas
         player.update(pressed_keys)
-
         # actualizamos los enemigos
         enemies.update()
         # actualizamos la interfaz

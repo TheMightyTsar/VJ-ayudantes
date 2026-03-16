@@ -10,7 +10,8 @@ class Enemy(pygame.sprite.Sprite):
         super(Enemy, self).__init__()
         self.surf = BUGpng_scaled
         self.surf.set_colorkey((0, 0, 0), RLEACCEL)
-        # la posicion inicial es generada aleatoriamente, al igual que la velocidad
+        # la posicion inicial es generada
+        # aleatoriamente, al igual que la velocidad
         self.rect = self.surf.get_rect(
             center=(
                 screen.get_width() + 100,
@@ -19,8 +20,10 @@ class Enemy(pygame.sprite.Sprite):
         )
         self.speed = random.randint(3, 5)
 
-    # el sprite tendra velocidad
-    # cuando traspase el lado izq de la pantalla lo eliminamos
+
     def update(self):
+        # POR HACER (2.5): Mover a los enemigos
+
+        # POR HACER (2.5): Destruir a los enemigos
         pass
 

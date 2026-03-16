@@ -16,6 +16,7 @@ class Player(pygame.sprite.Sprite):
         self.screen_height = screen.get_height()
 
     def update(self, pressed_keys):
+        # POR HACER (2.5): Mover a Jorge
         if pressed_keys[K_UP]:
             self.rect.move_ip(0, -4)
         if pressed_keys[K_DOWN]:
@@ -25,6 +26,7 @@ class Player(pygame.sprite.Sprite):
         if pressed_keys[K_RIGHT]:
             self.rect.move_ip(4, 0)
 
+        # POR HACER (2.5): Mantener a Jorge en Pantalla
         if self.rect.left < 0:
             self.rect.left = 0
         if self.rect.right > self.screen_width:

@@ -53,9 +53,10 @@ def gameloop(screen):
 
             # POR HACER (2.7): Generar enemigos
 
-        # POR HACER (2.6): Dibujar los sprites
 
         # POR HACER (2.6): Actualizar los sprites
+
+        # POR HACER (2.6): Dibujar los sprites
 
         # POR HACER (2.9): Colisiones
 

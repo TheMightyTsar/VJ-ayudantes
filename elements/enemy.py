@@ -19,10 +19,13 @@ class Enemy(pygame.sprite.Sprite):
         )
         self.speed = random.randint(3, 5)
 
-    # el sprite tendra velocidad
-    # cuando traspase el lado izq de la pantalla lo eliminamos
+
+
     def update(self):
+        # POR HACER (2.5): Mover a los enemigos
         self.rect.move_ip(-self.speed, 0)
+        # POR HACER (2.5): Destruir a los enemigos
+        # si se salen de la pantalla
         if self.rect.right < 0:
             self.kill()
 
