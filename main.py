@@ -14,5 +14,4 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 """Aqui se ejecutaran las escenas del juego en orden"""
 basic_scene.gameloop(screen)
-
-
+game_scene.gameloop(screen)
