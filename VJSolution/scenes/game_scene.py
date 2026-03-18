@@ -2,9 +2,9 @@ import pygame
 
 from pygame.locals import (K_ESCAPE, KEYDOWN, QUIT)
 
-from CarpetaBase.elements.player import Player
+from VJSolution.elements.player import Player
 
-from CarpetaBase.elements.enemy import Enemy
+from VJSolution.elements.enemy import Enemy
 
 
 """"
@@ -75,5 +75,6 @@ def gameloop(screen):
         enemies.update()
         # actualizamos la interfaz
         pygame.display.flip()
+        print("debug")
 
         clock.tick(30)
