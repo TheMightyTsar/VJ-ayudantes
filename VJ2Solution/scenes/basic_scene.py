@@ -2,25 +2,44 @@ import pygame
 from pygame.locals import (K_ESCAPE, KEYDOWN, QUIT)
 
 def gameloop(screen):
-    # inicializamos el reloj de nuestra pantalla
+
+    # inicializamos el reloj
     clock = pygame.time.Clock()
 
-    # variable booleana para manejar el loop
     running = True
 
-    # loop principal de nuestra escena inicial
+    # fuente y texto
+    font = pygame.font.Font(None, 48)
+    line1 = font.render("Estamos en basic_scene", True, (255, 255, 255))
+    line2 = font.render("Aprieta ESC para salir de esta escena", True, (255, 255, 255))
+
+    # posiciones
+    line1_rect = line1.get_rect(
+        center=(screen.get_width() // 2, screen.get_height() // 2 - 25)
+    )
+
+    line2_rect = line2.get_rect(
+        center=(screen.get_width() // 2, screen.get_height() // 2 + 25)
+    )
+
+    # loop principal
     while running:
-        # iteramos sobre cada evento en la cola
         for event in pygame.event.get():
-            # se presiono una tecla?
             if event.type == KEYDOWN:
-                # era la tecla de escape? -> entonces terminamos
                 if event.key == K_ESCAPE:
                     running = False
-
-            # fue un click al cierre de la ventana? -> entonces terminamos
             elif event.type == QUIT:
                 running = False
 
-        # hacemos que pasen ticks de tiempo
+        # limpiar pantalla (fondo negro)
+        screen.fill((0, 0, 0))
+
+        # dibujar textos
+        screen.blit(line1, line1_rect)
+        screen.blit(line2, line2_rect)
+
+        # actualizar pantalla
+        pygame.display.flip()
+
+        # limitar FPS
         clock.tick(30)
